@@ -50,5 +50,21 @@ router.post('/', ensureAuth, jsonParser, async function (req, res, next) {
 	res.status(200).json({ success: true, message: "Guitar added successfully.", newGuitar });
 });
 
+router.delete('/:guitarId', async (req, res, next) => {
+    const { guitarId } = req.params;
+    
+    try {
+      const wasDeleted = await guitarService.deleteGuitar(guitarId);
+      if (wasDeleted) {
+        res.status(200).json({ success: true, message: "Guitar deleted successfully" });
+      } else {
+        res.status(404).json({ success: false, message: "Guitar not found" });
+      }
+    } catch (error) {
+      console.error("Error in DELETE /guitars/:guitarId:", error);
+      res.status(500).json({ success: false, message: "Failed to delete guitar" });
+    }
+  });
+
 module.exports = router;
 

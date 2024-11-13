@@ -32,5 +32,17 @@ class GuitarService {
 		return guitar;
 	}
 
+	async deleteGuitar(guitarId) {
+		try {
+		  const result = await this.Guitar.destroy({
+			where: { id: guitarId }
+		  });
+		  return result > 0; // Returns true if a record was deleted, false otherwise
+		} catch (error) {
+		  console.error("Error deleting guitar:", error);
+		  throw new Error("Could not delete the guitar");
+		}
+	}
+
 }
 module.exports = GuitarService;
