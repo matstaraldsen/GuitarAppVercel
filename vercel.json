@@ -4,6 +4,9 @@
     "routes": [
       { "src": "/stylesheets/(.*)", "dest": "/public/stylesheets/$1" },
       { "src": "/(.*)", "dest": "/index.js" }
-    ]
+    ],
+    "static": {
+      "public": "public"
+    }
   }
   
