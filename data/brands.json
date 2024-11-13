@@ -1,0 +1,14 @@
+[
+    {
+      "Id": 1,
+      "query": "INSERT INTO Brands(Id, Name) VALUES(1, 'Fender')"
+    },
+    {
+      "Id": 2,
+      "query": "INSERT INTO Brands(Id, Name) VALUES(2, 'Gibson')"
+    },
+    {
+      "Id": 3,
+      "query": "INSERT INTO Brands(Id, Name) VALUES(3, 'PRS')"
+    }
+   ]

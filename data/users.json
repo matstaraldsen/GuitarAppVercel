@@ -1,0 +1,6 @@
+[
+    {
+      "Id": 1,
+      "query": "INSERT INTO Users(Id, Email, Password) VALUES(1, 'admin@example.com', '1234')"
+    }
+   ]

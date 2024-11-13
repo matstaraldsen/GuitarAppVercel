@@ -1,0 +1,14 @@
+[
+    {
+      "Id": 1,
+      "query": "INSERT INTO Guitars(Id, Year, Price, BrandId, ColorId, ModelId) VALUES(1, '1962-01-01 00:00:00', 2500, 1, 1, 1)"
+    },
+    {
+      "Id": 2,
+      "query": "INSERT INTO Guitars(Id, Year, Price, BrandId, ColorId, ModelId) VALUES(2, '1959-01-01 00:00:00', 5000, 2, 2, 2)"
+    },
+    {
+      "Id": 3,
+      "query": "INSERT INTO Guitars(Id, Year, Price, BrandId, ColorId, ModelId) VALUES(3, '2020-01-01 00:00:00', 3500, 3, 3, 3)"
+    }
+   ]

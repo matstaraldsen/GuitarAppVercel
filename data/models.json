@@ -1,0 +1,14 @@
+[
+    {
+      "Id": 1,
+      "query": "INSERT INTO Models(Id, Name) VALUES(1, 'Stratocaster')"
+    },
+    {
+      "Id": 2,
+      "query": "INSERT INTO Models(Id, Name) VALUES(2, 'Les Paul')"
+    },
+    {
+      "Id": 3,
+      "query": "INSERT INTO Models(Id, Name) VALUES(3, 'Custom 24')"
+    }
+   ]

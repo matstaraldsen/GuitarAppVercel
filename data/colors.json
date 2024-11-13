@@ -1,0 +1,14 @@
+[
+    {
+      "Id": 1,
+      "query": "INSERT INTO Colors(Id, Name) VALUES(1, 'Sunburst')"
+    },
+    {
+      "Id": 2,
+      "query": "INSERT INTO Colors(Id, Name) VALUES(2, 'Cherry Burst')"
+    },
+    {
+      "Id": 3,
+      "query": "INSERT INTO Colors(Id, Name) VALUES(3, 'Charcoal Burst')"
+    }
+   ]
