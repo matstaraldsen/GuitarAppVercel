@@ -41,39 +41,44 @@ router.post("/signup", async (req, res, next) => {
 
 // POST login existing user
 router.post("/login", async (req, res, next) => {
-	const userEmail = req.body.Email;
-    const userPassword = req.body.Password;
-
-    console.log("Email:", userEmail, "Password:", userPassword);
-
-
-    const existingUser = await userService.getOne(userEmail);
-
-    if (!existingUser || existingUser.Password !== userPassword) {
-        const error = new Error("Incorrect Credentials");
-        return next(error);
-    }
-
-    let token;
     try {
-        token = jwt.sign(
-            { email: existingUser.email },
-            process.env.TOKEN_SECRET,
-            { expiresIn: "1h" }
-        );
-    } catch (err) {
-        console.log(err);
-        const error = new Error("Error! Something went wrong.");
-        return next(error);
-    }
+        const userEmail = req.body.Email;
+        const userPassword = req.body.Password;
 
-    res.status(200).json({
-        success: true,
-        data: {
-            email: existingUser.Email,
-            token: token
-        },
-    });
+        console.log("Email:", userEmail, "Password:", userPassword);
+
+
+        const existingUser = await userService.getOne(userEmail);
+
+        if (!existingUser || existingUser.Password !== userPassword) {
+            const error = new Error("Incorrect Credentials");
+            return next(error);
+        }
+
+        let token;
+        try {
+            token = jwt.sign(
+                { email: existingUser.email },
+                process.env.TOKEN_SECRET,
+                { expiresIn: "1h" }
+            );
+        } catch (err) {
+            console.log(err);
+            const error = new Error("Error! Something went wrong.");
+            return next(error);
+        }
+
+        res.status(200).json({
+            success: true,
+            data: {
+                email: existingUser.Email,
+                token: token
+            },
+        });
+    } catch (err) {
+        console.error("Error during login:", err);
+        res.status(500).send("Error! Something went wrong.");
+    }
 });
 
 module.exports = router;
