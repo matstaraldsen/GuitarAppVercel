@@ -41,8 +41,11 @@ router.post("/signup", async (req, res, next) => {
 
 // POST login existing user
 router.post("/login", async (req, res, next) => {
-	const userEmail = req.body.email;
-    const userPassword = req.body.password;
+	const userEmail = req.body.Email;
+    const userPassword = req.body.Password;
+
+    console.log("Email:", userEmail, "Password:", userPassword);
+
 
     const existingUser = await userService.getOne(userEmail);
 
